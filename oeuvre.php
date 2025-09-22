@@ -1,7 +1,7 @@
 <?php
     include 'header.php';
     include 'bdd.php';
-    $bdd = connexion ();
+    $bdd = connexion();
 
     // Si l'URL ne contient pas d'id, on redirige sur la page d'accueil
     if(empty($_GET['id'])) {

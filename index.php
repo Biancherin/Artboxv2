@@ -2,11 +2,11 @@
     include 'header.php';
     include 'bdd.php';
 
-    $bdd = connexion (); 
+    $bdd = connexion(); 
     $oeuvres = $bdd->query('SELECT * FROM oeuvres');
 ?>
 <div id="liste-oeuvres">
-    <?php foreach($oeuvres as $oeuvre): ?>
+    <?php foreach($oeuvres as $oeuvre) { ?>
         <article class="oeuvre">
             <a href="oeuvre.php?id=<?= $oeuvre['id'] ?>">
                 <img src="<?= $oeuvre['image'] ?>" alt="<?= $oeuvre['titre'] ?>">
@@ -14,6 +14,6 @@
                 <p class="description"><?= $oeuvre['artiste'] ?></p>
             </a>
         </article>
-    <?php endforeach; ?>
+    <?php } ?>
 </div>
 <?php include 'footer.php'; ?>
